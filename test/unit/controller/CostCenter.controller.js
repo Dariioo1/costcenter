@@ -1,0 +1,2 @@
+sap.ui.define(["costescenter/controller/CostCenter.controller"],function(t){"use strict";QUnit.module("CostCenter Controller");QUnit.test("I should test the CostCenter controller",function(e){var n=new t;n.onInit();e.ok(n)})});
+//# sourceMappingURL=CostCenter.controller.js.map

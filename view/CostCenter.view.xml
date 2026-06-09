@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="costescenter.controller.CostCenter"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:t="sap.ui.table">
+
+    <Page title="Cost Center Hierarchy">
+
+        <content>
+
+            <t:TreeTable
+                id="treeTable"
+                selectionMode="None"
+                visibleRowCount="10">
+
+                <t:columns>
+
+                    <t:Column width="300px">
+                        <Label text="Cost Center"/>
+                        <t:template>
+                            <Text text="{name}"/>
+                        </t:template>
+                    </t:Column>
+
+                    <t:Column width="150px">
+                        <Label text="Budget"/>
+                        <t:template>
+                            <Text text="{budget}"/>
+                        </t:template>
+                    </t:Column>
+
+                </t:columns>
+
+            </t:TreeTable>
+
+        </content>
+
+    </Page>
+
+</mvc:View>
