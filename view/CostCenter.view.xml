@@ -4,34 +4,81 @@
     xmlns="sap.m"
     xmlns:t="sap.ui.table">
 
-    <Page title="Cost Center Hierarchy">
+    <Page title="Centro Beneficios" showHeader="false">
 
         <content>
 
-            <t:TreeTable
-                id="treeTable"
-                selectionMode="None"
-                visibleRowCount="10">
+            <VBox>
 
-                <t:columns>
+                <!-- Filtros -->
+                <Toolbar>
 
-                    <t:Column width="300px">
-                        <Label text="Cost Center"/>
-                        <t:template>
-                            <Text text="{name}"/>
-                        </t:template>
-                    </t:Column>
+                    <Label text="Centro Beneficios:"/>
 
-                    <t:Column width="150px">
-                        <Label text="Budget"/>
-                        <t:template>
-                            <Text text="{budget}"/>
-                        </t:template>
-                    </t:Column>
+                    <SearchField
+                        width="250px"
+                        placeholder=" "
+                        liveChange=".onFilterName"/>
 
-                </t:columns>
+                 <!--   <Label
+                        text="Budget:"
+                      class="sapUiMediumMarginBegin"/> 
 
-            </t:TreeTable>
+                    <SearchField
+                        width="200px"
+                                                placeholder=" "
+
+                        liveChange=".onFilterBudget"/>-->
+
+                </Toolbar>
+
+                <!-- Contador -->
+                <Toolbar>
+                    <Title id="titleCount" text="Centro Beneficios (0)"/>
+                </Toolbar>
+
+                <!-- TreeTable -->
+<t:TreeTable
+    id="treeTable"
+    rows="{path:'/nodes', parameters:{arrayNames:['nodes']}}"
+    visibleRowCount="50"
+    selectionMode="None"
+    width="100%">
+
+                    <t:columns>
+
+                        <t:Column
+                            width="550px"
+                            sortProperty="name"
+                            filterProperty="name">
+
+                            <Label text="Nombre"/>
+
+                            <t:template>
+                                <Text text="{name}"/>
+                            </t:template>
+
+                        </t:Column>
+
+                   <!--  <t:Column
+                            width="200px"
+                            sortProperty="budget"
+                            filterProperty="budget"
+                            hAlign="End">
+
+                            <Label text="Budget"/>
+
+                            <t:template>
+                                <Text text="{budget}"/>
+                            </t:template>
+
+                        </t:Column> -->
+
+                    </t:columns>
+
+                </t:TreeTable>
+
+            </VBox>
 
         </content>
 
